@@ -1,0 +1,13 @@
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\bin\Debug\netcoreapp3.1\BancoCS.exe
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\bin\Debug\netcoreapp3.1\BancoCS.deps.json
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\bin\Debug\netcoreapp3.1\BancoCS.runtimeconfig.json
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\bin\Debug\netcoreapp3.1\BancoCS.runtimeconfig.dev.json
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\bin\Debug\netcoreapp3.1\BancoCS.dll
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\bin\Debug\netcoreapp3.1\BancoCS.pdb
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\obj\Debug\netcoreapp3.1\BancoCS.csprojAssemblyReference.cache
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\obj\Debug\netcoreapp3.1\BancoCS.AssemblyInfoInputs.cache
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\obj\Debug\netcoreapp3.1\BancoCS.AssemblyInfo.cs
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\obj\Debug\netcoreapp3.1\BancoCS.csproj.CoreCompileInputs.cache
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\obj\Debug\netcoreapp3.1\BancoCS.dll
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\obj\Debug\netcoreapp3.1\BancoCS.pdb
+C:\Users\wagne\OneDrive\Área de Trabalho\Bancos\BancoCS\BancoCS\obj\Debug\netcoreapp3.1\BancoCS.genruntimeconfig.cache
