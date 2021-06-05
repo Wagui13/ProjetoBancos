@@ -1,10 +1,14 @@
+/* Projeto de um Banco Ficticio, pra praticar e aprender Java;
+ * Faltam algumas validacoes e o encapsulamento dos dados do usuario, eventualmente adicionar get e set;
+   Wagner Cardoso; */
+
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Bem vindo(a) ao BBB - Banco Banco Brasil");
+		OlhaOFront.bemVinde(); // msg de boas vindas
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -18,50 +22,64 @@ public class Main {
 			psword = input.nextLine();
 		}
 		System.out.println("Agora informe a sua idade: ");
-		byte age = input.nextByte();  
+		int age = input.nextInt(); 
+		while (age < 0 || age > 130) {
+			System.out.println("Idade inválida! Tente novamente: ");
+			age = input.nextInt();
+		}
 		
 		System.out.println("Digite o seu endereço: ");
 		String address = input.next();
 		address += input.nextLine();
 		
-		Usuario user = new Usuario(name, psword, age , address);
-			
+		OlhaOFront.caixaTexto("        Usuário cadastrado!");
+		Usuario user = new Usuario(name, psword, age, address);
 		
 		while (true) {
+					
+			OlhaOFront.operacoesMenu(); // menu de operações: saque, deposito, saldo, dados do usuario, alterar dados e sair
+			String op = input.next();
 			
-		
-			System.out.print("\n\nEscolha a operação que deseja realiza:\n[1] Saque, [2] Depósito, [3] Saldo, [123] Sair\n-");
-			byte op = input.nextByte();
-			
-			if (op == 1) {
-				System.out.print("Digite o valor que deseja sacar: R$");
-				float v_saque = input.nextFloat();
-				while (v_saque > user.Saldo) {
-					System.out.print("Inválido! Valor inserido é maior que o saldo atual! Tente novamente: R$");
-					v_saque = input.nextFloat();
-				}
-				user.Saldo = OperacoesBanco.Saque(v_saque, user.Saldo);
-				System.out.println("Saque no valor de R$" + v_saque + " realizado com sucesso!");
-			}
-			
-			if (op == 2) {
+			if (op.equals("1")) {
 				System.out.print("Digite o valor que deseja depositar: R$");
-				float v_deposito = input.nextFloat();
-				user.Saldo = OperacoesBanco.Deposito(v_deposito, user.Saldo) ;
-				System.out.println("Depósito no valor de R$" + v_deposito + " realizado com sucesso!");
+				double vDeposito = input.nextDouble();
+				user.Saldo = OperacoesBanco.deposito(vDeposito, user.Saldo) ;
+				OlhaOFront.depositoMenu(vDeposito);
 			}
 			
-			if (op == 3) {
-				System.out.print("Seu saldo atual é de: R$" + OperacoesBanco.Saldo(user.Saldo));				
+			else if (op.equals("2")) {				
+				System.out.print("Digite o valor que deseja sacar: R$");
+				double vSaque = input.nextDouble();
+				while (vSaque > user.Saldo) {
+					System.out.print("Inválido! Valor inserido é maior que o saldo atual! Tente novamente: R$");
+					vSaque = input.nextDouble();
+				}
+				user.Saldo = OperacoesBanco.saque(vSaque, user.Saldo);
+				OlhaOFront.saqueMenu(vSaque);						
 			}
 			
-			if (op == 123) {
-				System.out.println("\nOperação Finalizada. Obrigado e volte sempre!");		
+			else if (op.equals("3")) {
+				OlhaOFront.saldoMenu(user.Saldo); 
+				//gostaria de fazer um press enter to continue no fim dos menus, mas o input.next(); pula a linha ao invés de continuar
+			}
+			
+			else if (op.equals("4")) {
+				OperacoesBanco.consultaDados(user);
+			}
+			
+			else if (op.equals("5")) {
+				OperacoesBanco.alteraDados(user);
+			}
+			
+			else if (op.equals("123")) {
+				OlhaOFront.volteSempre();	
 				break;
 			}
-		}
+			else {
+				OlhaOFront.caixaTexto("Operação inválida! Tente novamente");
+			}
+		}	
 		
-		System.out.println("Dados do Usuário - Nome: " + user.Name + ", Idade: " + user.Age + ", Endereço: " + user.Adress);
+		input.close();
 	}
-
 }
