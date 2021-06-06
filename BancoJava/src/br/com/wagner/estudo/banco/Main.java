@@ -8,14 +8,17 @@ import java.util.Scanner;
 import br.com.wagner.estudo.banco.business.OperacoesBanco;
 import br.com.wagner.estudo.banco.dto.UsuarioDTO;
 import br.com.wagner.estudo.banco.view.OlhaOFront;
+import br.com.wagner.estudo.banco.view.UsuarioView;
 
 public class Main {
 
+	private static Scanner input = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		
 		OlhaOFront.bemVinde(); // msg de boas vindas
 		
-		Scanner input = new Scanner(System.in);
+		
 		
 		System.out.println("Nome do Usuario: ");
 		String name = input.nextLine(); 
@@ -73,7 +76,7 @@ public class Main {
 			}
 			
 			else if (op.equals("5")) {
-				OperacoesBanco.alteraDados(user);
+				UsuarioView.alteraDados(user, input);
 			}
 			
 			else if (op.equals("123")) {
