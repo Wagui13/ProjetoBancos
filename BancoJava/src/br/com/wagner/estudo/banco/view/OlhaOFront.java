@@ -1,3 +1,4 @@
+package br.com.wagner.estudo.banco.view;
 
 public class OlhaOFront {
 
